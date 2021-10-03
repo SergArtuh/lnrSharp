@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>Serhii Artiukh</Authors>
+    <Version>0.0.5</Version>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+  </PropertyGroup>
+  <PropertyGroup>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  
+  <ItemGroup Condition=" '$(Platform)' == 'x64' ">
+    <Content Include="$(ProjectDir)lib\netcore\win-x64\LNR.dll">
+      <Link>LNR.dll</Link>
+      <Pack>true</Pack>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(Platform)' == 'x86' ">
+    <Content Include="$(ProjectDir)lib\netcore\win-x86\LNR.dll">
+      <Link>LNR.dll</Link>
+      <Pack>true</Pack>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup Condition= " '$(Platform)' != 'x64' And '$(Platform)' != 'x86' ">
+    <Content Include="$(ProjectDir)lib\netcore\win-x64\LNR.dll">
+      <Link>LNR.dll</Link>
+      <Pack>true</Pack>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

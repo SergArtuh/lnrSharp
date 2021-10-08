@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>Serhii Artiukh</Authors>
-    <Version>0.0.5</Version>
+    <Version>0.1.1</Version>
     <PackageVersion>$(Version)-$([System.DateTime]::Now.ToString("yyyy-MM-dd-HH-mm-ss"))</PackageVersion>
     <Platforms>AnyCPU;x64;x86</Platforms>
   </PropertyGroup>

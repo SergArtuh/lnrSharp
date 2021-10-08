@@ -63,16 +63,16 @@ namespace lnrSharp
         //private static extern IntPtr CreateMatrixFromNativeData4f(IntPtr ptr);
 
         [DllImport(Common.Config.LNR_NATIVE_LIP_PATH)]
-        private static extern void DeleteMatrix4f(IntPtr vector);
+        private static extern void DeleteMatrix4f(IntPtr matrix);
 
         [DllImport(Common.Config.LNR_NATIVE_LIP_PATH)]
-        private static extern float GetMatrix4f(IntPtr vector, UInt32 i, UInt32 j);
+        private static extern float GetMatrix4f(IntPtr matrix, UInt32 i, UInt32 j);
 
         [DllImport(Common.Config.LNR_NATIVE_LIP_PATH)]
-        private static extern IntPtr GetVectorMatrix4f(IntPtr vector, UInt32 i);
+        private static extern IntPtr GetVectorMatrix4f(IntPtr matrix, UInt32 i);
 
         [DllImport(Common.Config.LNR_NATIVE_LIP_PATH)]
-        private static extern void SetMatrix4f(IntPtr vector, UInt32 i, UInt32 j, float value);
+        private static extern void SetMatrix4f(IntPtr matrix, UInt32 i, UInt32 j, float value);
 
         [DllImport(Common.Config.LNR_NATIVE_LIP_PATH)]
         private static extern void SetDataPtrMatrix4f(IntPtr matrix, IntPtr ptr);

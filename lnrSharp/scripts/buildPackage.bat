@@ -1,0 +1,1 @@
+nuget pack lnrSharp.csproj -OutputDirectory bin/

@@ -5,6 +5,7 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>Serhii Artiukh</Authors>
     <Version>0.0.5</Version>
+    <PackageVersion>$(Version)-$([System.DateTime]::Now.ToString("yyyy-MM-dd-HH-mm-ss"))</PackageVersion>
     <Platforms>AnyCPU;x64;x86</Platforms>
   </PropertyGroup>
   <PropertyGroup>
@@ -35,5 +36,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="$(ProjectDir)scripts\buildPackage.bat" />
+  </Target>
 
 </Project>

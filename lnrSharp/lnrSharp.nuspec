@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>lnrSharp</id>
-    <version>$version$</version>
+    <version>$PackageVersion$</version>
     <title>""</title>
     <authors>SergArtuh</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

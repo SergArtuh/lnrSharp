@@ -4,7 +4,7 @@ using System.Text;
 
 namespace lnrSharp.Common
 {
-    public class NativeHandler
+    public class NativeHandler : INativeHandler
     {
 
         public IntPtr GetNativePtr()

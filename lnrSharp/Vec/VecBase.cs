@@ -3,12 +3,14 @@ using System.Text;
 
 namespace lnrSharp
 {
-    abstract public class VecBase<T> : Common.NativeHandler
+    abstract public class VecBase<T> : Common.NativeHandler, Common.INativeDataAccessor
     {
         public virtual UInt32 N { get; }
         public virtual UInt32 SizeInByte { get; }
         public abstract T Get(UInt32 i);
+        public abstract IntPtr GetNativeDataPtr();
         public abstract void Set(UInt32 i, float value);
+        public abstract void SetNativeDataPtr(IntPtr ptr);
 
         public override string ToString()
         {

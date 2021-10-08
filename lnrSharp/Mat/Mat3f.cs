@@ -34,9 +34,19 @@ namespace lnrSharp
             return GetMatrix3f(m_handlerPrt, i, j);
         }
 
+        public override IntPtr GetNativeDataPtr()
+        {
+            throw new NotImplementedException();
+        }
+
         public override void Set(UInt32 i, UInt32 j, float value)
         {
             SetMatrix3f(m_handlerPrt, i, j, value);
+        }
+
+        public override void SetNativeDataPtr(IntPtr ptr)
+        {
+            throw new NotImplementedException();
         }
 
         [DllImport(Common.Config.LNR_NATIVE_LIP_PATH)]

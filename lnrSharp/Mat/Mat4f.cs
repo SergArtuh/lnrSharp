@@ -45,7 +45,16 @@ namespace lnrSharp
             SetMatrix4f(m_handlerPrt, i, j, value);
         }
 
-       
+        public override IntPtr GetNativeDataPtr()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void SetNativeDataPtr(IntPtr ptr)
+        {
+            SetDataPtrMatrix4f(m_handlerPrt, ptr);
+        }
+
 
         [DllImport(Common.Config.LNR_NATIVE_LIP_PATH)]
         private static extern IntPtr CreateMatrix4f(float[] data);
@@ -64,5 +73,9 @@ namespace lnrSharp
 
         [DllImport(Common.Config.LNR_NATIVE_LIP_PATH)]
         private static extern void SetMatrix4f(IntPtr vector, UInt32 i, UInt32 j, float value);
+
+        [DllImport(Common.Config.LNR_NATIVE_LIP_PATH)]
+        private static extern void SetDataPtrMatrix4f(IntPtr matrix, IntPtr ptr);
+
     }
 }

@@ -33,10 +33,19 @@ namespace lnrSharp
         {
             return GetVector3f(m_handlerPrt, i);
         }
+        public override IntPtr GetNativeDataPtr()
+        {
+            throw new NotImplementedException();
+        }
 
         public override void Set(UInt32 i, float value)
         {
             SetVector3f(m_handlerPrt, i, value);
+        }
+
+        public override void SetNativeDataPtr(IntPtr ptr)
+        {
+            throw new NotImplementedException();
         }
 
         public float this[UInt32 key]

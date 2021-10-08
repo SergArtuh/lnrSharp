@@ -32,10 +32,20 @@ namespace lnrSharp
         {
             return GetVector4f(m_handlerPrt, i);
         }
+        public override IntPtr GetNativeDataPtr()
+        {
+            throw new NotImplementedException();
+        }
 
         public override void Set(UInt32 i, float value)
         {
             SetVector4f(m_handlerPrt, i, value);
+        }
+
+
+        public override void SetNativeDataPtr(IntPtr ptr)
+        {
+            SetDataPtrVec4f(m_handlerPrt, ptr);
         }
 
 
@@ -80,6 +90,10 @@ namespace lnrSharp
 
         [DllImport(Common.Config.LNR_NATIVE_LIP_PATH)]
         private static extern void SetVector4f(IntPtr vector, UInt32 id, float value);
+
+        [DllImport(Common.Config.LNR_NATIVE_LIP_PATH)]
+        private static extern void SetDataPtrVec4f(IntPtr matrix, IntPtr ptr);
+
     }
 }
 

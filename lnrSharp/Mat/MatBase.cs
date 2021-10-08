@@ -1,14 +1,17 @@
-﻿using System;
+﻿using lnrSharp.Common;
+using System;
 using System.Text;
 
 namespace lnrSharp
 {
-    abstract public class MatBase<T> : Common.NativeHandler
+    abstract public class MatBase<T> : Common.NativeHandler, Common.INativeDataAccessor
     {
-        public virtual UInt32 N { get; }
-        public virtual UInt32 SizeInByte { get; }
+        public abstract UInt32 N { get; }
+        public abstract UInt32 SizeInByte { get; }
         public abstract T Get(UInt32 i, UInt32 j);
+        public abstract IntPtr GetNativeDataPtr();
         public abstract void Set(UInt32 i, UInt32 j, float value);
+        public abstract void SetNativeDataPtr(IntPtr ptr);
 
         public override string ToString()
         {

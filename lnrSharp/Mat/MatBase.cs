@@ -4,7 +4,7 @@ using System.Text;
 
 namespace lnrSharp
 {
-    abstract public class MatBase<T> : Common.NativeHandler, Common.INativeDataAccessor
+    abstract public class MatBase<T> : Common.NativeHandler, IMatBase<T>, Common.INativeDataAccessor
     {
         public abstract UInt32 N { get; }
         public abstract UInt32 SizeInByte { get; }

@@ -10,7 +10,7 @@ namespace lnrSharp
         public abstract UInt32 SizeInByte { get; }
         public abstract T Get(UInt32 i, UInt32 j);
         public abstract IntPtr GetNativeDataPtr();
-        public abstract void Set(UInt32 i, UInt32 j, float value);
+        public abstract void Set(UInt32 i, UInt32 j, T value);
         public abstract void SetNativeDataPtr(IntPtr ptr);
 
         public override string ToString()
